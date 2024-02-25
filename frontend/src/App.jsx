@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link, Navigate, Route, Routes } from 'react-router-dom'; // Import Link component from react-router-dom
+import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import SignUp from './pages/signup/SignUp';
-import Landing from './pages/Landing/Landing'; // Correct import statement for Landing component
+import Landing from './pages/Landing/Landing';
+import VideoCall from './pages/Vedio/vedioCall';
+import Blog from './pages/Blog/Blog';
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from './context/AuthContext';
 
@@ -13,13 +15,15 @@ function Navbar({ authUser }) {
       <nav className="bg-gray-900 text-white p-4 fixed w-full z-10">
         <div className="container mx-auto flex justify-between items-center">
           <div className="logo">
-            <a href="#">BITCODERS</a>
+            <Link to="/">BITCODERS</Link>
           </div>
           <ul className="flex text-sm hover:underline hover:text-blue-600 mt-2 inline-block">
             <li className="mr-4"><Link to="/login">Login</Link></li>
             <li className="mr-4"><Link to="/signup">SignUp</Link></li>
-            <li className="mr-4"><Link to="/video-call">Video</Link></li>
-            <li><Link to="/blog" target="_blank">Blog</Link></li> {/* Added target="_blank" */}
+            <li className="mr-4"><Link to="/Blog">News</Link></li>
+
+            <li className="mr-4"><Link to="/vedio">Video</Link></li> {/* Changed to "/vedio" */}
+            <li><Link to="/Blog">Blog</Link></li> {/* Removed target="_blank" */}
           </ul>
         </div>
       </nav>
@@ -37,7 +41,10 @@ function App() {
           <Route path='/' element={authUser ? <Home /> : <Navigate to='/landing' />} />
           <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
           <Route path='/signup' element={authUser ? <Navigate to='/' /> : <SignUp />} />
-          <Route path='/landing' element={<Landing />} /> {/* Corrected placement */}
+          <Route path='/Blog' element={authUser ? <Navigate to='/' /> : <Blog />} />
+
+          <Route path='/vedio' element={authUser ? <Navigate to='/' /> : <VideoCall />} /> {/* Updated to VideoCall */}
+          <Route path='/landing' element={<Landing />} />
         </Routes>
         <Toaster />
       </div>

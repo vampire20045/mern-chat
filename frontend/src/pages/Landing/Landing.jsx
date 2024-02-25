@@ -9,7 +9,7 @@ function Landing() {
 
       <section className="bg-cover h-screen flex items-center justify-center" style={{backgroundImage: "url('https://wallpaper.dog/large/10724012.jpg')"}}>
         <div className="bg-black bg-opacity-50 p-8 text-white text-center">
-          <h2 className="text-5xl font-semibold mb-4">GIVE A HAND TO MAKE</h2>
+          <h2 className="text-5xl font-semibold mb-4">GIVE A HAND TO MAKE &</h2>
           <h2 className="text-5xl font-semibold">BECOME BETTER CODER </h2>
           <div className="mt-8">
             <button className="bg-white text-black px-6 py-2 rounded-full mr-4">CONNECT</button>
