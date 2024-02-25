@@ -16,7 +16,4 @@
     <l1> npm  install </l1>
     <l1> npm run build</l1>
     <l1> npm run start </l1>
-
-    
-  </ol>
-</p>
+  </ol></p>
