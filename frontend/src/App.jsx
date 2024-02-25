@@ -6,6 +6,8 @@ import SignUp from './pages/signup/SignUp';
 import Landing from './pages/Landing/Landing';
 import VideoCall from './pages/Vedio/vedioCall';
 import Blog from './pages/Blog/Blog';
+import Post from './pages/Post/Post';
+import faq from './pages/faq/faq';
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from './context/AuthContext';
 
@@ -21,9 +23,11 @@ function Navbar({ authUser }) {
             <li className="mr-4"><Link to="/login">Login</Link></li>
             <li className="mr-4"><Link to="/signup">SignUp</Link></li>
             <li className="mr-4"><Link to="/Blog">News</Link></li>
+            <li className="mr-4"><Link to="/faq">News</Link></li>
+
 
             <li className="mr-4"><Link to="/vedio">Video</Link></li> {/* Changed to "/vedio" */}
-            <li><Link to="/Blog">Blog</Link></li> {/* Removed target="_blank" */}
+            <li><Link to="/Post">Blog</Link></li> {/* Removed target="_blank" */}
           </ul>
         </div>
       </nav>
@@ -42,6 +46,8 @@ function App() {
           <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
           <Route path='/signup' element={authUser ? <Navigate to='/' /> : <SignUp />} />
           <Route path='/Blog' element={authUser ? <Navigate to='/' /> : <Blog />} />
+          <Route path='/Post' element={authUser ? <Navigate to='/' /> : <Post />} />
+          <Route path='/faq' element={authUser ? <Navigate to='/' /> : <faq />} />
 
           <Route path='/vedio' element={authUser ? <Navigate to='/' /> : <VideoCall />} /> {/* Updated to VideoCall */}
           <Route path='/landing' element={<Landing />} />
